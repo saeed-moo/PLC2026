@@ -32,26 +32,26 @@ public class ErrorsEnum
         return result;
     }
   
-    private static Result error2Result(Error e)
+    private static Error result2Error(Result r)
     {
-        Result result = null;
+        Error error = null;
         
         switch (e) {
-        case FP_ROUNDING:
-            result = Result.A_BIT_DIFFERENT;
+        case A_Bit_DIFFERENT:
+            error = Error.A_BIT_DIFFERENT;
             break;
-        case FP_OVERFLOW:
-            result = Result.INFINITY;
+        case INFINITY:
+            error = Error.INFINITY;
             break;
-        case FP_UNDERFLOW:
-            result = Result.ZERO;
+        case ZERO:
+            error = Error.ZERO;
             break;
-        case INT_OVERFLOW:
-            result = Result.VERY_DIFFERENT;
+        case VERY_DIFFERENT:
+            error = Error.VERY_DIFFERENT;
             break;
         }
         
-        return result;
+        return error;
     }
 
     public static void main(String[] args)
