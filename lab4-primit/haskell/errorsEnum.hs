@@ -27,13 +27,13 @@ data Result = Zero | Infinity | ABitDifferent | VeryDifferent
               Bounded, -- default minBound and maxBound
               Enum) -- default sequencing (needed for .. ranges)
 
-allErrors :: [Error] -- ie it is a list of PL elements
-allErrors = [minBound .. maxBound]
+allResults :: [Results] -- ie it is a list of PL elements
+allResults = [minBound .. maxBound]
 
-error2Result FP_Rounding = ABitDifferent
-error2Result FP_Overflow = Infinity
-error2Result FP_Underflow = Zero
-error2Result Int_Overflow = VeryDifferent
+result2Error FP_Rounding = ABitDifferent
+result2Error FP_Overflow = Infinity
+result2Error FP_Underflow = Zero
+result2Error Int_Overflow = VeryDifferent
 
 -- The code below should not be changed and does not need to be fully understood.
 
